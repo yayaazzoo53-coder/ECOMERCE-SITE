@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>متجري الإلكتروني</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f2027;
+      color: #fff;
+    }
+
+    header {
+      padding: 20px;
+      background: #111;
+      text-align: center;
+      font-size: 24px;
+      color: #00eaff;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #00eaff;
+    }
+
+    /* products */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* seller form */
+    .form-box {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background: #00eaff;
+      cursor: pointer;
+    }
+
+    .success {
+      color: #00ff99;
+      text-align: center;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  🛒 متجري الإلكتروني
+</header>
+
+<section>
+  <h2>المنتجات</h2>
+  <div class="products">
+    <div class="card">منتج 1</div>
+    <div class="card">منتج 2</div>
+    <div class="card">منتج 3</div>
+  </div>
+</section>
+
+<section>
+  <h2>تسجيل بائع</h2>
+
+  <div class="form-box">
+    <input type="text" id="store" placeholder="اسم المتجر">
+    <input type="email" id="email" placeholder="البريد الإلكتروني">
+    <input type="password" id="password" placeholder="كلمة المرور">
+
+    <button onclick="registerSeller()">تسجيل</button>
+
+    <div class="success" id="successMsg">
+      ✅ تم تسجيل البائع بنجاح
+    </div>
+  </div>
+</section>
+
+<footer>
+  © جميع الحقوق محفوظة
+</footer>
+
+<script>
+  function registerSeller() {
+    const store = document.getElementById("store").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (store === ""⠞⠵⠵⠺⠟⠞⠟⠞⠟⠟⠵⠺⠺⠺⠞⠺password === "") {
+      alert("يرجى ملء جميع الحقول");
+      return;
+    }
+
+    const sellerData = {
+      storeName: store,
+      email: email
+    };
+
+    localStorage.setItem("seller", JSON.stringify(sellerData));
+
+    document.getElementById("successMsg").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
