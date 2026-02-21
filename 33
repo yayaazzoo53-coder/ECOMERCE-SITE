@@ -1,0 +1,37 @@
+<button class="enter-btn" onclick="enterShop()">دخول للمتجر</button>
+.enter-btn{
+  padding:15px 40px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:#00eaff;
+  cursor:pointer;
+  margin-top:20px;
+}
+<script>
+function enterShop(){
+  document.getElementById("shop").style.display = "block";
+  window.scrollTo({
+    top: document.getElementById("shop").offsetTop,
+    behavior: "smooth"
+  });
+}
+</script>
+<div id="shop" style="display:none; padding:40px;">
+  <h2>🛍️ متجر الملابس</h2>
+
+  <div class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x300">
+      <h3>قميص عصري</h3>
+      <p>120 MAD</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x300">
+      <h3>سترة شتوية</h3>
+      <p>350 MAD</p>
+    </div>
+  </div>
+</div>
+
